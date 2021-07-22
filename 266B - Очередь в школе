@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int n, t;
+	int flag = 0;
+	char swap;
+	cin >> n;
+	cin >> t;
+	char* a = new char[n+3];
+	cin >> a;
+	for (int i = 0; i < t; i++)
+	{
+		flag = 0;
+		for (int j = 0; j + 1 < n ; j++)
+		{
+			if (flag == 1)
+			{
+				flag = 0;
+				continue;
+			}
+			if (a[j] == 'B' && a[j + 1] == 'G')
+			{
+				swap = a[j + 1];
+				a[j + 1] = a[j];
+				a[j] = swap;
+				flag = 1;
+			}
+		}
+	}
+	cout << a;
+}
