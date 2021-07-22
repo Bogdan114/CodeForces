@@ -1,0 +1,43 @@
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+	string* str = new string[n];
+	int temp;
+	char swap;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> str[i];
+	}
+	for (int i = 0; i < n; i++)
+	{
+		int j = 1;
+		if (str[i].size() > 10)
+		{
+			temp = str[i].size()-2;
+			if (10 <= temp && temp <= 99)
+			{
+				str[i][2] = (temp % 10)+48;
+				temp = temp / 10;
+				str[i][1] = (temp % 10) + 48;
+				str[i][3] = str[i][str[i].size() - 1];
+				str[i].resize(4);
+			}
+			else
+			{
+				str[i][1] = (temp % 10) + 48;
+				str[i][2] = str[i][str[i].size() - 1];
+				str[i].resize(3);
+			}
+		}
+		cout << str[i]<<endl;
+	}
+	delete[] str;
+	system("pause>nul");
+	return 0;
+}
