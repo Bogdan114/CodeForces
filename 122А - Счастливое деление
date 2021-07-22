@@ -1,0 +1,11 @@
+#include<iostream>
+using namespace std;
+const int a = 4, a1 = 7, a2 = 47, a3 = 74, a4 = 744 , a5 = 477;
+int main()
+{
+	int n;
+	cin >> n;
+	if (n % a == 0 || n % a1 == 0 || n % a2 == 0 || n % a3 == 0 || n % a4 == 0 || n % a5 == 0)
+		cout << "YES";
+	else cout << "NO";
+}
