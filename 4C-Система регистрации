@@ -1,0 +1,30 @@
+#include <iostream>
+#include <map>
+#include <string>
+#include <iterator>
+
+using namespace std;
+
+int main()
+{
+	int n,temp;
+	map<string,int>spisok;
+	map<string, int>::iterator it;
+	string a;
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> a;
+		it = spisok.find(a);
+		if (it==spisok.end())
+		{
+			cout << "OK"<<endl;
+			spisok.insert(pair<string, int>(a,0));
+		}
+		else
+		{
+			it->second++;
+			cout << it->first << it->second<<endl;
+		}
+	}
+}
