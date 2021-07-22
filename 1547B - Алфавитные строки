@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int t, flag = 1, seach = 97;
+	int temp=0,temp_a=1,razmer=0;
+	int l = 1;
+	cin >> t;
+	char** a = new char* [t];
+	for (int i = 0; i < t; i++)
+	{
+		a[i] = new char[27];
+		cin >> a[i];
+	}
+	for (int i = 0; i < t; i++)
+	{
+		flag = 1;
+		temp = 0;
+		temp_a = 1;
+		seach = 97;
+		razmer = 0;
+		for (int j = 0; a[i][j] != '\0'; j++)
+		{
+			if (a[i][j] == seach)
+			{
+				temp = j;
+			}
+			razmer++;
+		}
+		for (int k = 0,l=1; k < temp_a && (temp+k<razmer || temp-l >=0)&& temp_a<=razmer;)
+		{
+			if (a[i][temp + k] == seach)
+			{
+					temp_a++;
+					seach++;
+					flag = 1;
+					k++;
+			}
+			else 
+				if (a[i][temp - l] == seach)
+				{
+					temp_a++;
+					seach++;
+					flag = 1;
+					l++;
+				}
+				else
+				{
+					flag = 0;
+					break;
+				}
+		}
+		if (flag == 0)
+			cout << "NO" << endl;
+		else cout << "YES"<<endl;
+	}
+	system("pause>nul");
+	return 1;
+}
