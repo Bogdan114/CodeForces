@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	string y;
+	int flag = 0, fl = 0;
+	cin >> y;
+	while (true)
+	{
+		flag = 0;
+		fl = 0;
+		if (y[3] == '9')
+			for (int k = y.size() - 1; k >= 0; k--)
+			{
+				if (y[k] == '9')
+				{
+					y[k] = '0';
+				}
+				else
+				{
+					y[k]++;
+					break;
+				}
+			}
+		else y[3]++;
+		for (int i = 0; i < y.size(); i++)
+		{
+			for (int j = i + 1; j < y.size(); j++)
+			{
+				if (y[i] == y[j])
+				{
+					flag=1;
+				}
+			}
+			if (flag == 0)
+				fl++;
+		}
+		if (fl == y.size())
+			break;
+	}
+	cout << y;
+}
