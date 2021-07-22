@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+	string hate = "I hate";
+	string love = "I love";
+	string it = " it";
+	string that = " that ";
+	string otv;
+	for (int i = 1; i <= n; i++)
+	{
+		if (i % 2 == 1)
+		{
+			otv = otv + hate;
+		}
+		else otv = otv + love;
+		if (i == n)
+		{
+			otv = otv + it;
+		}
+		else otv = otv + that;
+	}
+	cout << otv;
+}
