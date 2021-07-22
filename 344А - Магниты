@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int n,sawe,otv=1;
+	cin >> n;
+	int* a = new int[n];
+	for (int i = 0; i < n; i++)
+	{
+		cin >> a[i];
+	}
+	sawe = a[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (sawe != a[i])
+		{
+			sawe = a[i];
+			otv++;
+		}
+	}
+	cout << otv;
+}
