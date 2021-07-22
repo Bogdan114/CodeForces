@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	int j;
+	int otv = 0;
+	string temp;
+	cin >> j;
+	for (int i = 0; i < j; i++)
+	{
+		cin.ignore();
+		getline(cin, temp);
+		if (temp[0] == '+' || temp[2] == '+')
+		{
+			otv++;
+		}
+		else otv--;
+	}
+	cout << otv;
+	system("pause>nul");
+}
