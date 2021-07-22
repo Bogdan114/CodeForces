@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int otv = 0;
+	int* a = new int[4];
+	for (int i = 0; i < 4; i++)
+	{
+		cin >> a[i];
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (a[i]!=0)
+			for (int j = i+1; j < 4; j++)
+			{
+				if (a[i] == a[j])
+				{
+					a[j] = 0;
+					otv++;
+				}
+			}
+	}
+	cout << otv;
+}
