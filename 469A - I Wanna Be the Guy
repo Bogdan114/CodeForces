@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int n,a,b,flag=0;
+	cin >> n;
+	cin >> a;
+	int* a1 = new int[a];
+	for (int i = 0; i < a; i++)
+	{
+		cin >> a1[i];
+	}
+	cin >> b;
+	int* b1 = new int[b];
+	for (int i = 0; i < b; i++)
+	{
+		cin >> b1[i];
+	}
+	for (int i = 0; i < n; i++)
+	{
+		flag = 0;
+		for (int j = 0; j < a; j++)
+		{
+			if (i + 1 == a1[j])
+			{
+				flag = 1;
+				break;
+			}
+		}
+		if (flag!=1)
+			for (int j = 0; j < b; j++)
+			{
+				if (i + 1 == b1[j])
+				{
+					flag = 1;
+					break;
+				}
+			}
+		if (flag == 0)
+		{
+			cout << "Oh, my keyboard!";
+			break;
+		}
+	}
+	if (flag == 1)
+		cout << "I become the guy.";
+}
