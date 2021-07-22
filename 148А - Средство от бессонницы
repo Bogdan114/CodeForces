@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int k, l, m, n, d;
+	int k1, l1, m1, n1;
+	int otv = 0;
+	cin >> k >> l >> m >> n >> d;
+	for (int i = 1, k1 = k, l1 = l, m1 = m, n1 = n; i <= d; i++)
+	{
+		if (i == k1 || i == l1 || i == m1 || i == n1)
+		{
+			otv++;
+		}
+		if (i == k1)
+		{
+			k1 = k1 + k;
+		}
+		if (i == l1)
+		{
+			l1 = l1 + l;
+		}
+		if (i == m1)
+		{
+			m1 = m1 + m;
+		}
+		if (i == n1)
+		{
+			n1 = n1 + n;
+		}
+	}
+	cout << otv;
+}
