@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string a;
+	char swap;
+	cin >> a;
+	for (int i = 0; i < a.size(); i++)
+		for (int j = 0; j < a.size(); j++)
+		{
+			if (a[i] != '+' && a[j] != '+')
+			{
+				if (a[i] < a[j])
+				{
+					swap = a[i];
+					a[i] = a[j];
+					a[j] = swap;
+				}
+			}
+		}
+	cout << a;
+	system("pause>nul");
+	return 0;
+}
