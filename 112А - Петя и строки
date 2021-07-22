@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	char a[102];
+	char b[102];
+	int flag = 0;
+	cin >> a;
+	cin >> b;
+	for (int i = 0; a[i] != '\0' && b[i] != '\0'; i++)
+	{
+		if (97 <= a[i] && a[i] <= 122)
+			a[i] = a[i] - 32;
+		if (97 <= b[i] && b[i] <= 122)
+			b[i] = b[i] - 32;
+		if (a[i] < b[i])
+		{
+			flag = -1;
+			break;
+		}
+		if (a[i] > b[i])
+		{
+			flag = 1;
+			break;
+		}
+	}
+	cout << flag;
+	system("pause>nul");
+}
