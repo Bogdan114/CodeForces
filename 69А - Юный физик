@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n,otv=0;
+	cin >> n;
+	int** mas = new int* [n];
+	for (int i = 0; i < n; i++)
+	{
+		mas[i] = new int[3];
+		for (int j = 0; j < 3; j++)
+		{
+			cin >> mas[i][j];
+		}
+	}
+	for (int j = 0; j < 3; j++)
+	{
+		for (int i = 0; i < n; i++)
+		{
+			otv = mas[i][j] + otv;
+		}
+		if (otv != 0)
+		{
+			cout << "NO";
+			break;
+		}
+	}
+	if (otv == 0)
+	{
+		cout << "YES";
+	}
+	system("pause>nul");
+}
