@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n,max=0,otv=0;
+	cin >> n;
+	int* a = new int[n];
+	for (int i = 0; i < n; i++)
+	{
+		cin >> a[i];
+	}
+	for (int i = 0; i+1 < n; i++)
+	{
+		if (a[i] <= a[i+1])
+		{
+			otv++;
+		}
+		else
+		{
+			if (max < otv)
+				max = otv;
+			otv = 0;
+		}
+	}
+	if (max < otv)
+		max = otv;
+	cout << (max+1);
+}
