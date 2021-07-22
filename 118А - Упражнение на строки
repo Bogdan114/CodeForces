@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	char a[103];
+	int j = 0;
+	cin >> a;
+	char temp[206];
+	for (int i = 0; a[i] != '\0'; i++)
+	{
+		if (a[i] != 'a' && a[i] != 'A' && a[i] != 'o' && a[i] != 'O' && a[i] != 'y' && a[i] != 'Y'
+			&& a[i] != 'e' && a[i] != 'E' && a[i] != 'u' && a[i] != 'U' && a[i] != 'i' && a[i] != 'I')
+		{
+			temp[j] = '.';
+			j++;
+			if (65<=a[i] && a[i]<=90)
+				temp[j] = (a[i]+32);
+			else
+				temp[j] = a[i];
+			j++;
+		}
+	}
+	temp[j] = '\0';
+	cout << temp;
+	system("pause>nul");
+}
