@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n, m,swap;
+	int k = 0;
+	int min=1000;
+	cin >> n>> m;
+	int* a = new int[m];
+	for (int i = 0; i < m; i++)
+	{
+		cin >> a[i];
+	}
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = i + 1; j < m; j++)
+		{
+			if (a[i] < a[j])
+			{
+				swap = a[i];
+				a[i] = a[j];
+				a[j] = swap;
+			}
+		}
+	}
+	for (int i = 0,k=n-1; k < m; i++,k++)
+	{
+		if (a[i] - a[k] < min)
+		{
+			min = a[i] - a[k];
+		}
+	}
+	cout << min;
+}
