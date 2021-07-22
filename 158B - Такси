@@ -1,0 +1,64 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+	int n;
+	int che_4 = 0, che_1 = 0, che_2 = 0,che_3=0;
+	cin >> n;
+	int* a = new int[n];
+	for (int i = 0; i < n; i++)
+	{
+		cin >> a[i];
+	}
+	for (int i = 0; i < n ; i++)
+	{
+		if (a[i] == 4)
+		{
+			che_4++;
+		}
+		if (a[i] == 1)
+		{
+			che_1=che_1+1;
+		}
+		if (a[i] == 2)
+		{
+			che_2 = che_2 + 2;
+		}
+		if (3 == a[i])
+		{
+			che_3 = che_3 + 3;
+		}
+	}
+	if (che_1 == (che_3 / 3))
+	{
+		che_4 = che_4+(che_1 + che_3) / 4;
+		che_1 = 0;
+		che_3 = 0;
+	}
+	else
+	{
+		if (che_1 < (che_3 / 3))
+		{
+			che_3 = (che_3 / 3) - che_1;
+			che_4 = che_4 + che_3+che_1;
+			che_1 = 0;
+			che_3 = 0;
+		}
+		else
+		{
+			if (che_1 > (che_3 / 3))
+			{
+				che_4 = che_4+(che_3 / 3);
+				che_1 = che_1 - (che_3 / 3);
+				che_3 = 0;
+			}
+		}
+	}
+	che_2 = che_2 + che_1;
+	che_4 = che_4+che_2 / 4;
+	if (che_2 % 4 != 0)
+		che_4++;
+	cout << che_4;
+}
