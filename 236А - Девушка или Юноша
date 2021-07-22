@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	int otv = 0;
+	string a;
+	cin >> a;
+	for (int i = 0; i < a.size(); i++)
+	{
+		for (int j = i+1; j < a.size(); j++)
+		{
+			if (a[i] == a[j] && a[i]!='.' && a[j]!='.')
+				a[j]='.';
+		}
+		if (a[i]!='.')
+			otv++;
+	}
+	if (otv % 2 == 1)
+		cout << "IGNORE HIM!";
+	else cout << "CHAT WITH HER!";
+	system("pause>nul");
+	return 0;
+}
