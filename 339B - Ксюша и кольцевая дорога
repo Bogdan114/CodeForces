@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int n, m;
+	long long otv=0;
+	int j = 1;
+	cin >> n >> m;
+	long long *a = new long long[m];
+	for (int i = 0; i < m; i++)
+	{
+		cin >> a[i];
+	}
+	otv = otv + (a[0]-1);
+	for (long i = 0; i+1 < m; i++)
+	{
+		if (a[i] < a[i + 1])
+		{
+			otv = otv + (a[i+1] - a[i]);
+		}else
+			if (a[i] > a[i + 1])
+			{
+				otv = otv + (n - a[i]) + a[i + 1];
+			}
+	}
+	cout << otv;
+}
